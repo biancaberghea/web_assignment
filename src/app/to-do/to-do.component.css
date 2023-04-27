@@ -1,0 +1,19 @@
+.btnLog{
+    background-color: #709f11; 
+    color: #FFFFFF; 
+    border: none;
+    padding: 10px 20px; 
+    cursor: pointer; 
+    display: flex;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  }
+  
+  .card {
+    margin: 0 auto;
+  }

@@ -1,0 +1,39 @@
+
+<header>
+  <div style="display: flex; align-items: center;">
+    <div style="width: 50%;">
+      <img src="{{ images[currentIndex] }}" alt="Header image" style="width: 100%;">
+    </div>
+    <div style="width: 40%; text-align: right;">
+      <h1>“Success usually comes to those who are too busy looking for it.”</h1>
+      <p>— Henry David Thoreau</p>
+    </div>
+  </div>
+</header>
+<div class="container d-flex justify-content-center">
+<div class="card" style="width: 18rem;">
+    <div class="card-header text-center">
+        <h1 class="display-6 fw-bold">To-Do List</h1>
+    </div>
+    <div class="card-body">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Your task" [(ngModel)]="newT.description">
+        <button class="btn" (click)="addTask()"><i class="fa-solid fa-circle-plus fa-xl"></i></button>
+      </div>
+      <ul style="list-style: none" class="list">
+        <li class="list-items" *ngFor="let item of tasks">
+            <span>
+                <i class="text-success" (click)="changeState(item.id, !item.done)"
+                [ngClass]="item.done?'fa-solid fa-circle-check':'fa-regular fa-circle'"></i>
+                {{item.description}}
+            </span>
+            <button class="btn" (click)="deleteTask(item.id)"><i class="fa-solid fa-trash-can" ></i></button>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="logOut-btn">
+    <button class="btnLog" (click)="logOutUser()">Log Out</button>
+  </div>
+</div>
